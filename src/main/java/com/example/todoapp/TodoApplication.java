@@ -1,6 +1,5 @@
-package com.example.TODO_APP.TODO_APP;
+package com.example.todoapp;
 
-import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
