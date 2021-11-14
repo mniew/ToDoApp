@@ -1,9 +1,10 @@
 package com.example.todoapp.item;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 public class ToDoItem {
     private final ToDoId id;
@@ -12,7 +13,18 @@ public class ToDoItem {
 
     // Factory method (static)
     static ToDoItem from(ToDoId id, ToDoName name) {
+
+        if (name == null) {
+            throw new IllegalArgumentException("Name should not be null");
+        }
+
+        if (id == null) {
+            throw new IllegalArgumentException("Id should not be null");
+        }
+
+
         return new ToDoItem(id, name, false);
+
     }
 
     public void rename(ToDoName newName) {
